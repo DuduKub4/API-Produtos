@@ -1,0 +1,18 @@
+// prisma/migrations/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://prisma:prisma@localhost:5432/mydatabase?schema=public"
+}
+
+model Produtos {
+  id        String   @id @default(uuid())
+  nome      String
+  img       String
+  descricao String
+  createdAt DateTime @default(now())
+}
